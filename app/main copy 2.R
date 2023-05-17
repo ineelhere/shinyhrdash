@@ -9,13 +9,12 @@ box::use(
   app/view/midpage
 )
 
+
 #' @export
 ui <- function(id) {
   ns <- NS(id)
     dashboardPage(
-  dashboardHeader(color = "blue", title = "Dashboard", inverted = TRUE,
-  dropdownMenu(type = "notifications",
-                               taskItem("Project progress...", 50.777, color = "red"))),
+  dashboardHeader(color = "blue", title = "Dashboard", inverted = TRUE,),
   dashboardSidebar(
     size = "wide", color = "teal",
     sidebarMenu(
@@ -28,13 +27,17 @@ ui <- function(id) {
     )
   ),
   dashboardBody(
-    gridPanel(
-              template = "sidebar-right",
-                div(
-                  midpage$ui(ns("midpage"))
-                ),
-                div("second")
-            )
+    tabItems(
+      selected = 1,
+      tabItem(
+        tabName = "main",
+        box(h1("main"), title = "A b c", width = 16, color = "orange")
+      ),
+      tabItem(
+        tabName = "extra",
+          h1("extra")
+      )
+    )
   )
 )
 
