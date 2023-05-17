@@ -12,8 +12,9 @@ ui <- function(id) {
   fluidPage(
     div(class = "left-nav",
       div(class = "logo", 
-        img(src = "static/logo.png")
+        img(src = "static/logo.png"),
         ),
+      br(),
       div(class = "nav-item selected",
         span(bs_icon("columns-gap"), "Dashboard")
       ),

@@ -1,10 +1,10 @@
 box::use(
   shiny[...],
-  shinydashboard[...],
 )
 
 box::use(
-  app/view/left_sidebar
+  app/view/left_sidebar,
+  app/view/midpage
 )
 
 #' @export
@@ -15,7 +15,7 @@ ui <- function(id) {
       column(width = 2,
           left_sidebar$ui(ns("left_sidebar"))),
       column(width = 7,
-          h1("2nd")),
+          midpage$ui(ns("midpage"))),
       column(width = 3,
           h1("3rd"))
     )
@@ -26,5 +26,6 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     left_sidebar$server("left_sidebar")
+    midpage$server("midpage")
   })
 }
