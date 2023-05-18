@@ -8,7 +8,7 @@ acquisitions <- function(){
     data <- data.frame(
     Category = c("Applications", "Shortlisted", "Rejected", "On hold", "Finalised"),
     Percentage = c(80, 55, 47, 35, 24),
-    Color = c("blue", "yellow", "orange", "purple", "green")
+    Color = c("#2663bf", "#ebc634", "#eb3434", "#5926bf", "#2dbd51")
     )
 
     # Specify the order of categories

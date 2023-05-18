@@ -37,6 +37,7 @@ ui <- function(id) {
         template = "sidebar-right",
         div(
           midpage$ui(ns("midpage")),
+          br(),
           cards( class="two",
           card(class = "stats-card",
             div(class="card-content",
