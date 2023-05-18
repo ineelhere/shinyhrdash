@@ -2,13 +2,16 @@ box::use(
   shiny[...],
   imola[...],
   semantic.dashboard[...],
+  shiny.semantic[...],
   echarts4r[...],
+  plotly[...],
 )
 
 box::use(
   app/view/left_sidebar,
   app/view/midpage,
-  app/logic/stackchart[stackchart]
+  app/logic/stackchart[stackchart],
+  app/logic/acquisitions[acquisitions]
 )
 
 #' @export
@@ -19,7 +22,7 @@ ui <- function(id) {
                     dropdownMenu(type = "notifications",
                                  taskItem("Project progress...", 50.777, color = "red"))),
     dashboardSidebar(
-      size = "wide", color = "teal",
+      size = "wide", color = "teal", pushable = TRUE, closable = TRUE,
       sidebarMenu(
         menuItem(
           div(
@@ -34,18 +37,24 @@ ui <- function(id) {
         template = "sidebar-right",
         div(
           midpage$ui(ns("midpage")),
-          gridPanel(
-            template = "sidebar-right",
-            div(
-              echarts4rOutput(ns("stackchart"))
-            ),
-            div("the other one")
-          ),
-          div("second")
+          cards( class="two",
+          card(class = "stats-card",
+            div(class="card-content",
+            h3("Statistics of Active Applications"),
+            echarts4rOutput(ns("stackchart"))
+            )
+        ),
+        card(
+          div(class="card-content",
+            h3("Acquisitions"),
+            plotlyOutput(ns("acquisitions"))
+            )
+        ))
+        ),
+        div("second")
         )
       )
     )
-  )
 }
 
 #' @export
@@ -61,6 +70,10 @@ server <- function(id) {
 
     output$stackchart <- renderEcharts4r({
       stackchart(data)
+    })
+
+    output$acquisitions <- renderPlotly({
+      acquisitions()
     })
   })
 }

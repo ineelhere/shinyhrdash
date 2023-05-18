@@ -35,6 +35,15 @@ ui <- function(id) {
       div(class = "nav-item",
           span(bs_icon("box-arrow-right"), "Logout")
         ),
+      div(
+      class = "premium-card",
+      div(
+        class = "premium-content",
+        p(class = "premium-heading", "Upgrade to Premium"),
+        p(class = "premium-para", "Go Pro to unlock more features"),
+        tags$button(class = "premium-btn", "UPGRADE")
+      )
+    )
     )
   )
 }

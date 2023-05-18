@@ -138,7 +138,7 @@ code, kbd, pre, samp, p {
   }
   
   .card-content:hover {
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2), 0 0 20px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 3px rgba(183, 32, 32, 0.2), 0 0 20px 6px rgba(104, 198, 21, 0.1);
   }
   
   .card-header {
@@ -211,7 +211,90 @@ code, kbd, pre, samp, p {
     display: flex;
     align-items: center;
   }
+
+  .premium-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
   
-  // .card-loader {
-  //   margin-left: auto;
-  // }
+  .premium-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: #000000;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .premium-content .heading {
+    font-weight: 700;
+    font-size: 32px;
+  }
+  
+  .premium-content .para {
+    line-height: 1.5;
+  }
+  
+  .premium-content .premium-btn {
+    color: #e8e8e8;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .premium-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .premium-card:hover::before {
+    height: 100%;
+  }
+  
+  .premium-card:hover {
+    box-shadow: none;
+  }
+  
+  .premium-card:hover .premium-btn {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .premium-content .premium-btn:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .premium-content .premium-btn:active {
+    box-shadow: none;
+  }
+  
+  .stats-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+
+
+  
