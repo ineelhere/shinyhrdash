@@ -22,7 +22,7 @@ code, kbd, pre, samp, p {
   
   .logo img {
     width: 130px; 
-    height: 50px; 
+    height: 60px; 
     border-radius: 50%;
     margin-right: 10px; 
   }
@@ -37,7 +37,7 @@ code, kbd, pre, samp, p {
     position: relative; 
     transition: color 0.3s ease;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 20px;
 
     &:hover {
       color: rgb(41, 112, 211);
@@ -160,22 +160,49 @@ code, kbd, pre, samp, p {
     color: rgb(0, 0, 0);
   }
   
-  .card-description {
+  .card1-description {
     font-size: 16px;
-    color: rgb(156, 23, 193);
+    color: rgb(43, 19, 223);
     display: flex;
     align-items: left;
     justify-content: left;
   }
   
-  .card-description .bs-icon {
+  .card1-description .bs-icon {
     font-size: 24px;
     margin-right: 8px;
-    color: rgb(156, 23, 193);
+    color: rgb(43, 19, 223);
+  }
+
+  .card2-description {
+    font-size: 16px;
+    color: rgb(251, 235, 9);
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .card2-description .bs-icon {
+    font-size: 24px;
+    margin-right: 8px;
+    color: rgb(251, 235, 9);
+  }
+
+  .card3-description {
+    font-size: 16px;
+    color: rgb(251, 38, 0);
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .card3-description .bs-icon {
+    font-size: 24px;
+    margin-right: 8px;
+    color: rgb(251, 38, 0);
   }
   
   .card-content {
-    /* Your existing styles */
     display: flex;
     flex-direction: column;
   }
@@ -185,7 +212,6 @@ code, kbd, pre, samp, p {
     align-items: center;
   }
   
-  .card-loader {
-    /* Your existing loader styles */
-    margin-left: auto;
-  }
+  // .card-loader {
+  //   margin-left: auto;
+  // }

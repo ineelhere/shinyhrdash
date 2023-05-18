@@ -1,29 +1,22 @@
 box::use(
   shiny[...],
-  imola[...],
+  bslib[...],
 )
 
 box::use(
     app/view/header_searchbar,
-    app/view/card1
+    app/view/midpage_card,
 )
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-    flexPanel(
-        template = "one-three-alternate",
+    fluidPage(
         div(
             header_searchbar$ui(ns("header_searchbar"))
         ),
         div(
-            card1$ui(ns("card1"))
-        ),
-        div(
-            card1$ui(ns("card1"))
-        ),
-        div(
-            card1$ui(ns("card1"))
+            midpage_card$ui(ns("midpage_card")),
         )
     )
 }
