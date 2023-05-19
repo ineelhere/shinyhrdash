@@ -10,6 +10,7 @@ box::use(
 box::use(
   app/view/left_sidebar,
   app/view/midpage,
+  app/view/right_sidebar,
   app/logic/stackchart[stackchart],
   app/logic/acquisitions[acquisitions]
 )
@@ -20,7 +21,7 @@ ui <- function(id) {
   dashboardPage(
     dashboardHeader(color = "blue", title = "Dashboard", inverted = TRUE,
                     dropdownMenu(type = "notifications",
-                                 taskItem("Project progress...", 50.777, color = "red"))),
+                                 taskItem("Project progress...", 80, color = "red"))),
     dashboardSidebar(
       size = "wide", color = "teal", pushable = TRUE, closable = TRUE,
       sidebarMenu(
@@ -52,7 +53,9 @@ ui <- function(id) {
             )
         ))
         ),
-        div("second")
+        div(
+          right_sidebar$ui(ns("right_sidebar"))
+        )
         )
       )
     )

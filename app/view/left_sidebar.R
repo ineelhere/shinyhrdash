@@ -39,8 +39,8 @@ ui <- function(id) {
       class = "premium-card",
       div(
         class = "premium-content",
-        p(class = "premium-heading", "Upgrade to Premium"),
-        p(class = "premium-para", "Go Pro to unlock more features"),
+        p(class = "heading", "Upgrade to Premium"),
+        p(class = "para", "Go Pro to unlock more features"),
         tags$button(class = "premium-btn", "UPGRADE")
       )
     )
