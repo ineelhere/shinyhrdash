@@ -12,7 +12,9 @@ box::use(
   app/view/midpage,
   app/view/right_sidebar,
   app/logic/stackchart[stackchart],
-  app/logic/acquisitions[acquisitions]
+  app/logic/acquisitions[acquisitions],
+  app/logic/areachart[areachart],
+  app/logic/donut[donut]
 )
 
 #' @export
@@ -51,6 +53,19 @@ ui <- function(id) {
                        h3("Acquisitions"),
                        plotlyOutput(ns("acquisitions"))
                    )
+                 )),
+          cards( class="two",
+                 card(size = "wide", class = "stats-card",
+                      div(class="card-content",
+                          h3("Applications Received Time"),
+                          echarts4rOutput(ns("areachart"))
+                      )
+                 ),
+                 card(
+                   div(class="card-content",
+                       h3("Candidates by gender"),
+                      echarts4rOutput(ns("donut"))
+                   )
                  ))
         ),
         div(
@@ -79,5 +94,15 @@ server <- function(id) {
     output$acquisitions <- renderPlotly({
       acquisitions()
     })
+
+    output$areachart <- renderEcharts4r({
+      areachart()
+    })
+
+    output$donut <- renderEcharts4r({
+      donut()
+    })
+
+
   })
 }
