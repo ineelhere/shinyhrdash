@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
+
+/* Typography */
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+code, kbd, pre, samp, p {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.left-nav {
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 130px; 
+    height: 60px; 
+    border-radius: 50%;
+    margin-right: 10px; 
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: grey;
+    font-weight: bold;
+    position: relative; 
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-size: 20px;
+
+    &:hover {
+      color: rgb(41, 112, 211);
+      // box-shadow: 5px 0 10px -5px rgb(0, 0, 17); 
+    }
+
+    &.selected {
+      color: rgb(41, 112, 211);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 5px; 
+        background-color: rgb(41, 112, 211);
+        border-radius: 0 10px 10px 0;
+      }
+    }
+
+    span {
+      margin-right: 10px;
+      border-radius: 0 10px 10px 0;
+    }
+  }
+}
+
+.container {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: 50px;
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  .input {
+    max-width: 190px;
+    height: 100%;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #aab5c5;
+    caret-color: #f7f7f8;
+    color: #fff;
+    padding: 13px 10px;
+    border: 2px solid transparent;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-right: 1px;
+    transition: all .2s ease;
+  }
+  
+  .input:hover {
+    border: 2px solid rgba(255, 255, 255, 0.16);
+  }
+  
+  .input:focus {
+    border: 2px solid #a970ff;
+    background-color: #b7c6d7;
+  }
+  
+  .search__btn {
+    background-color: rgb(5, 138, 247); 
+    border: none;
+    padding: 5px;
+    width: 30px; 
+    height: 30px; 
+    color: white; 
+    font-size: 16px; 
+    border-radius: 10%;
+  }
+  
+  .search__btn:hover {
+    cursor: pointer;
+    background-color: rgba(54, 54, 56, 1);
+  }
+  
+  .midpage-header {
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    margin: 20px;
+  }
+
+  .card-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card-content:hover {
+    box-shadow: 0 0 10px 3px rgba(183, 32, 32, 0.2), 0 0 20px 6px rgba(104, 198, 21, 0.1);
+  }
+  
+  .card-header {
+    font-size: 18px;
+    font-weight: normal;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  
+  .card-meta {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  .card-large-bold-number {
+    font-size: 38px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+  }
+  
+  .card1-description {
+    font-size: 16px;
+    color: rgb(43, 19, 223);
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .card1-description .bs-icon {
+    font-size: 24px;
+    margin-right: 8px;
+    color: rgb(43, 19, 223);
+  }
+
+  .card2-description {
+    font-size: 16px;
+    color: rgb(228, 205, 0);
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .card2-description .bs-icon {
+    font-size: 24px;
+    margin-right: 8px;
+    color: rgb(228, 205, 0);
+  }
+
+  .card3-description {
+    font-size: 16px;
+    color: rgb(251, 38, 0);
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .card3-description .bs-icon {
+    font-size: 24px;
+    margin-right: 8px;
+    color: rgb(251, 38, 0);
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-content-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .premium-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .premium-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    color: #000000;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .premium-content .heading {
+    font-weight: 700;
+    font-size: 22px;
+  }
+  
+  .premium-content .para {
+    line-height: 1.5;
+  }
+  
+  .premium-content .premium-btn {
+    color: #e8e8e8;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .premium-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .premium-card:hover::before {
+    height: 100%;
+  }
+  
+  .premium-card:hover {
+    box-shadow: none;
+  }
+  
+  .premium-card:hover .premium-btn {
+    color: #212121;
+    background: #e8e8e8;
+  }
+  
+  .premium-content .premium-btn:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+  }
+  
+  .premium-content .premium-btn:active {
+    box-shadow: none;
+  }
+  
+  .stats-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .profile-picture {
+    border-radius: 50%;
+  }
+
+  .right-sidebar-div{
+    font-weight: bold;
+    text-align: left;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .right-card-content {
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .right-card-content:hover {
+    box-shadow: 0 0 10px 3px rgba(183, 32, 32, 0.2), 0 0 20px 6px rgba(104, 198, 21, 0.1);
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .job-card {
+    width: 100%;
+    height: 70px;
+    background: #f38405;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .job-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .job-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#f78753, #f78753);
+    font-size: 24px;
+    color: #f7f7f8;
+  }
+  
+  .job-card:hover > .job-img {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(#ee1a1a, #f56b2b);
+  }
+  
+  .job-textBox {
+    flex: 1;
+    margin-left: 10px;
+    color: white;
+  }
+  
+  .job-textContent {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  
+  .job-h1 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .job-p {
+    font-size: 12px;
+    font-weight: lighter;
+    align-items: "left";
+    text-align: "left";
+  }
+  
+  .job-card-2 {
+    width: 100%;
+    height: 70px;
+    background: #3a45e7;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .job-card-2:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .job-img-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#3c6ace, #3e7bca);
+    font-size: 24px;
+    color: #f7f7f8;
+  }
+  
+  .job-card-2:hover > .job-img {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(#074986, #192cd6);
+  }
+
+  .job-textBox-reminder {
+    flex: 1;
+    margin-left: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+  }
+  
+  .job-textContent-reminder {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+
+  .job-card-a {
+    width: 100%;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .job-card-a:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .job-img-a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#eee6f1, #facfed);
+    font-size: 24px;
+    color: #ff00f2;
+  }
+  
+  .job-img-b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#e6f1a3, #f4ffb5);
+    font-size: 24px;
+    color: #8d8008;
+  }
+
+  .job-img-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#e99186, #faa090);
+    font-size: 24px;
+    color: #ff0000;
+  }
+
+  .job-img-d {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#c3ecb8, #c8f7d3);
+    font-size: 24px;
+    color: #01570f;
+  }
