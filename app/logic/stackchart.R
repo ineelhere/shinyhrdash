@@ -14,6 +14,3 @@ stackchart <- function(data){
     
   return(mychart)
 }
-
-
-
