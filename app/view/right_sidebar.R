@@ -70,10 +70,23 @@ ui <- function(id){
                            div(markdown("You have drafted a job post for")),
                            p("Web Developer", style="color:black; font-weight: bold;")
                        )
+                   ),
+                   br(),
+                   div(class = "job-card-a",
+                        
+                       ),
+                    div(class = "job-card-a",
+                        
+                       ),
+                    div(class = "job-card-a",
+                        
+                       ),
+                    div(class = "job-card-a",
+                        
+                       ),
                    )
                ),
              )
 
       )
-  )
 }
