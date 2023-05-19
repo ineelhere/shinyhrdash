@@ -57,7 +57,7 @@ ui <- function(id) {
           cards( class="two",
                  card(size = "wide", class = "stats-card",
                       div(class="card-content",
-                          h3("Applications Received Time"),
+                          h3("Applications Received Time (hrs)"),
                           echarts4rOutput(ns("areachart"))
                       )
                  ),

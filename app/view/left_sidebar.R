@@ -35,6 +35,7 @@ ui <- function(id) {
       div(class = "nav-item",
           span(bs_icon("box-arrow-right"), "Logout")
         ),
+      br(),br(),br(),br(),br(),br(),br(),br(),
       div(
       class = "premium-card",
       div(
